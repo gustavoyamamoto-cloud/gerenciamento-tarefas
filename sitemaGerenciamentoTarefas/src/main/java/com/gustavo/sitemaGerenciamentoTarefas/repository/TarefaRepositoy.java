@@ -9,5 +9,5 @@ import com.gustavo.sitemaGerenciamentoTarefas.entity.Tarefa;
 public interface TarefaRepositoy extends JpaRepository<Tarefa, Integer>{
     
     List<Tarefa> findByConcluida(boolean concluida);
-    List<Tarefa> findByContainig(String texto);
+    List<Tarefa> findByContaining(String texto);
 }
