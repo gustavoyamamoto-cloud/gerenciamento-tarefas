@@ -120,32 +120,6 @@ GET /tarefas/titulo/{texto}
 
 ---
 
-## 🧪 Banco de Dados H2
-
-Acesse o console do H2:
-
-```
-http://localhost:8080/h2-console
-```
-
-Configurações padrão:
-
-* JDBC URL: `jdbc:h2:mem:testdb`
-* User: `sa`
-* Password: (vazio)
-
----
-
-## 💡 Melhorias futuras
-
-* [ ] Adicionar validação com Bean Validation
-* [ ] Implementar paginação
-* [ ] Documentação com Swagger
-* [ ] Tratamento global de exceções
-* [ ] Autenticação com Spring Security
-
----
-
 ## 👨‍💻 Autor
 
 Desenvolvido por **Gustavo de Souza Yamamoto**
