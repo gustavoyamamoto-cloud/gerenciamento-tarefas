@@ -62,6 +62,11 @@ public class TarefaService {
 
     //Buscar por id
     public Tarefa buscarId(int id){
+        for(Tarefa f : lista){
+            if(f.getId() != id){
+                throw new TarefaNaoEncontradaException("Id não encontrado");
+            }
+        }
         Optional<Tarefa> op = repository.findById(id);
         return op.orElse(null); 
     }
@@ -84,5 +89,14 @@ public class TarefaService {
         repository.deleteById(id);
     }
 
+    //Filtrar por status
+    public List<Tarefa> filtrarStatus(boolean status){
+        return repository.findByConcluida(status);
+    }
+
+    //Filtrar por titulo
+    public List<Tarefa> filtrarTitulo(String text){
+        return repository.findByContainig(text);
+    }
 
 }

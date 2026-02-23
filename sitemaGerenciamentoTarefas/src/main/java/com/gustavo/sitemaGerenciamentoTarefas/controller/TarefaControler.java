@@ -65,4 +65,21 @@ public class TarefaControler {
         service.deletar(id);
     }
 
+    //Filtrar por status
+    @GetMapping("/status/{status}")
+    public List<TarefaResponse> filtrarStatus(@PathVariable boolean status){
+        return service.filtrarStatus(status)
+            .stream()
+            .map(service::toResponse)
+            .toList();
+    }
+
+    //Filtrar por titulo
+    @GetMapping("/titulo/{texto}")
+    public List<TarefaResponse> filtrarTitulo(@PathVariable String texto){
+        return service.filtrarTitulo(texto)
+            .stream()
+            .map(service::toResponse)
+            .toList();
+    }
 }
