@@ -51,8 +51,13 @@ public class TarefaService {
     }
 
     //Salvar Tarefas
-    public Tarefa salvar(Tarefa t){
-        return repository.save(t);
+    public Tarefa salvar(TarefaRequest dto){
+
+        Tarefa p = new Tarefa();
+        p.setNome(dto.getNome());
+        p.setDescricao(dto.getDescricao());
+        p.setConcluida(dto.getConcluida());
+        return repository.save(p);
     }
 
     //Buscar por id
