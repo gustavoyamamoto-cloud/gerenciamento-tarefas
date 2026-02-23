@@ -51,9 +51,6 @@ public class TarefaService {
     public Tarefa salvar(TarefaRequest dto){
 
         Tarefa p = toEntity(dto);
-        p.setNome(dto.getNome());
-        p.setDescricao(dto.getDescricao());
-        p.setConcluida(dto.getConcluida());
         return repository.save(p);
     }
 
@@ -90,7 +87,7 @@ public class TarefaService {
 
     //Filtrar por titulo
     public List<Tarefa> filtrarTitulo(String text){
-        return repository.findByContaining(text);
+        return repository.findByNomeContaining(text);
     }
 
 }
