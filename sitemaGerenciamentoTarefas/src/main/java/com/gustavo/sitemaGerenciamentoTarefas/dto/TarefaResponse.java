@@ -40,8 +40,5 @@ public class TarefaResponse {
     public void setConcluida(boolean concluida) {
         this.concluida = concluida;
     }
-
-    
-    
     
 }
